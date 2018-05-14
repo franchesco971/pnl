@@ -10,7 +10,7 @@
     </head>
     <body id="fond-autre">
         <?php  include 'menu.php'?>
-            <div class="container center white">
+        <div class="container center white" id="forum">
                 <?php 
                 foreach ($alertes as $alerte) {
                     echo "<div class='alert alert-success' role='alert'>
@@ -19,29 +19,22 @@
 
                 }                
                 ?>
-                <div class="row justify-content-md-center phrase">
-                    <div class="col"><p>PNL</p></div>
-                    
                 
-                </div>
-                <div class="row suite" >
-                    <div class="col-8" ></div>
-                    <div class="col" ><p>Que la famille...</p></div>
-                </div>
                 
                 <?php if(!isset($_SESSION['pseudo'])) { ?>
-                <a class="btn btn-primary" href="/connexion.php" role="button">Connexion</a>
-                <a class="btn btn-primary" href="/inscription.php" role="button">Inscription</a>
-                <?php } else { ?>
-                <form action="forum.php" method="POST" name="message" class="white">
+                    <a class="btn btn-primary" href="/connexion.php" role="button">Connexion</a>
+                    <a class="btn btn-primary" href="/inscription.php" role="button">Inscription</a>
+                <?php } else { ?>                
+
+                <form action="forum.php" method="POST" name="message" class="white form-message">
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Message</label>
+                        <label for="exampleFormControlTextarea1">Ecrire un message</label>
                         <textarea name="contenu" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
                 
-                <div class="white">
+                <div class="white row">
                     <h2>Messages :</h2>
                     <div id="message-container">
                     <?php foreach ($messages as $message) { $date = new DateTime($message['date_message']);?>
@@ -54,12 +47,17 @@
                 </div>
                 <?php } ?>
                 
-<!--                <div class="row">
-                    <video controls="controls" width="800" height="600" 
-                           name="Video Name" src="images/video.mov"></video>
-                </div>-->
+                <div class="row video">
+                    <div class="card">
+                        <video controls="controls" width="800" height="600" 
+                           name="Video Name" src="images/video.mp4"></video>
+                    </div>
+                </div>
                 
-                
+                <div class="row suite" >
+                    <div class="col-6" ></div>
+                    <div class="col" ><p>Merci beaucoup...</p></div>
+                </div>
             </div>    
         
         <script src="http://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>

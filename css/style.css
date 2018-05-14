@@ -34,3 +34,10 @@
     margin-left: 10px;
     color:white;
 }
+#forum .video, #forum .form-message{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#menu{
+    margin-bottom: 10px;
+}

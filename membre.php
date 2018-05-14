@@ -4,6 +4,7 @@ $alertes = [];
 
 try
 {
+    //$bdd = new PDO('mysql:host=localhost;dbname=mano;charset=utf8', 'root', '');
     $bdd = new PDO('mysql:host=localhost;dbname=id5622192_pnl;charset=utf8', 'id5622192_root', 'rootpnl');
 }
 catch (Exception $e)
